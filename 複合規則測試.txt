@@ -1,0 +1,177 @@
+
+[{
+    "_id": "CDS_187_13-CO2_alarm",
+    "name": "二氧化碳濃度過高",
+    "level": "警報",
+    "description": "CDS_187_13-CO2_二氧化碳濃度過高_上班時間",
+    "labels": [
+        {
+            "device": "07ac0bd7-dcfa-4b31-b797-e1001a33dd36"
+        },
+        {
+            "floor": "TPKD-13"
+        },
+        {
+            "point": "CDS_187_13-CO2"
+        },
+        {
+            "deviceType": "CDS"
+        }
+    ],
+    "trigger": {
+        "_t": "subscriber",
+        "topic": "points/CDS_187_13-CO2/presentvalue"
+    },
+    "calculator": {
+        "_t": "default",
+        "arguments": {
+            "x": {
+                "_t": "topic"
+            }
+        },
+        "conditions": {
+            "activate": {
+                "_t": "simple",
+                "expression": "x.value != None and x.value >950"
+            }
+        },
+        "conditions": {
+            "activate": {
+                "_t": "simple",
+                "expression": "Timestamp(x.time).hour>8"
+            },
+            "deactivate": {
+                "_t": "simple",
+                "expression": "Timestamp(x.time).hour<18"
+            }
+        }
+    },
+    "handlers": []
+}]
+
+### cache
+
+
+[{
+    "_id": "CDS_187_13-CO2_alarm",
+    "name": "二氧化碳濃度過高",
+    "level": "警報",
+    "description": "CDS_187_13-CO2_FCU通訊異常且二氧化碳濃度過高",
+    "labels": [
+        {
+            "device": "07ac0bd7-dcfa-4b31-b797-e1001a33dd36"
+        },
+        {
+            "floor": "TPKD-13"
+        },
+        {
+            "point": "CDS_187_13-CO2"
+        },
+        {
+            "deviceType": "CDS"
+        }
+    ],
+    "trigger": {
+        "_t": "subscriber",
+        "topic": "points/CDS_187_13-CO2/presentvalue"
+    },
+    "calculator": {
+        "_t": "default",
+        "arguments": {
+            "x": {
+                "_t": "topic"
+            },
+            "y": {
+                "_t": "cache",
+                "key":"shadow/points/FCU_553_13-COM_AL/presentvalue"
+            }
+        },
+        "conditions": {
+            "activate": {
+                "_t": "simple",
+                "expression": "x.value != None and x.value >950"
+            }
+        },
+
+        "conditions": {
+            "activate": {
+                "_t": "simple",
+                "expression": "y.value != None and y.value == True"
+                },
+            "deactivate": {
+                "_t": "simple",
+                "expression": "y.value != None and y.value != True"
+                }
+        }
+    },
+    "handlers": []
+}]
+
+
+### 複合規則
+
+
+[{
+    "_id": "CDS_187_13-CO2_alarm",
+    "name": "二氧化碳濃度過高",
+    "level": "警報",
+    "description": "CDS_187_13-CO2_FCU通訊異常且二氧化碳濃度過高_上班時間",
+    "labels": [
+        {
+            "device": "07ac0bd7-dcfa-4b31-b797-e1001a33dd36"
+        },
+        {
+            "floor": "TPKD-13"
+        },
+        {
+            "point": "CDS_187_13-CO2"
+        },
+        {
+            "deviceType": "CDS"
+        }
+    ],
+    "trigger": {
+        "_t": "subscriber",
+        "topic": "points/CDS_187_13-CO2/presentvalue"
+    },
+    "calculator": {
+        "_t": "default",
+        "arguments": {
+            "x": {
+                "_t": "topic"
+            },
+            "y": {
+                "_t": "cache",
+                "key": "shadow/points/FCU_553_13-COM_AL/presentvalue"
+            }
+        },
+        "conditions": {
+            "activate": {
+                "_t": "simple",
+                "expression": "x.value != None and x.value >950"
+            }
+        },
+        "conditions": {
+            "activate": {
+                "_t": "simple",
+                "expression": "Timestamp(x.time).hour>8"
+            },
+            "deactivate": {
+                "_t": "simple",
+                "expression": "Timestamp(x.time).hour<18"
+            }
+        },
+        "conditions": {
+            "activate": {
+                "_t": "simple",
+                "expression": "y.value != None and y.value == True"
+                },
+            "deactivate": {
+                "_t": "simple",
+                "expression": "y.value != None and y.value != True"
+                }
+        }
+    },
+    "handlers": []
+}]
+
