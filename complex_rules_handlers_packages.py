@@ -32,8 +32,8 @@ def single_rule_create(single_rule,token):
 
 # create single time rule set
 def single_rule_create_time(single_rule):
-    judgement_string_low = F"Timestamp(x.time).hour>{single_rule['LowerBound']}"
-    judgement_string_high = F"Timestamp(x.time).hour<{single_rule['UpperBound']}"
+    judgement_string_low = F"Timestamp(x.time).hour>={single_rule['LowerBound']}"
+    judgement_string_high = F"Timestamp(x.time).hour<={single_rule['UpperBound']}"
     return judgement_string_low,judgement_string_high
 
 def rule_dict_create(ori_rule):

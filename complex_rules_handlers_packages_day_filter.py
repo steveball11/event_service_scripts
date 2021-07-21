@@ -34,13 +34,13 @@ def single_rule_create(single_rule,token):
 
 
 def single_rule_create_time(single_rule,token):
-    judgement_string_low = F"Timestamp({token}.time).hour>{single_rule['LowerBound']}"
-    judgement_string_high = F"Timestamp({token}.time).hour<{single_rule['UpperBound']}"
+    judgement_string_low = F"Timestamp({token}.time).hour>={single_rule['LowerBound']}"
+    judgement_string_high = F"Timestamp({token}.time).hour<={single_rule['UpperBound']}"
     return judgement_string_low,judgement_string_high
 
 def single_rule_create_weekday(single_rule,token):
-    judgement_string_low = F"Timestamp({token}.time).day_of_week>{single_rule['LowerBound']}"
-    judgement_string_high = F"Timestamp({token}.time).day_of_week<{single_rule['UpperBound']}"
+    judgement_string_low = F"Timestamp({token}.time).day_of_week>={single_rule['LowerBound']}"
+    judgement_string_high = F"Timestamp({token}.time).day_of_week<={single_rule['UpperBound']}"
     return judgement_string_low,judgement_string_high
 
 def rule_dict_create(ori_rule,x_rule):
@@ -67,7 +67,8 @@ def dict_id_create_complex_rules(IdDescription,EventName,Level,PointId,Descripti
         dict_handler = handler_v1.handler_creater_off(IdDescription=IdDescription,Message_Title=Message_Title,Message=Message,SilentTime=SilentTime)
     elif message_target == "dev_off":
         dict_handler = handler_v1.handler_creater_dev_and_off(IdDescription=IdDescription,Message_Title=Message_Title,Message=Message,SilentTime=SilentTime)
-
+    else:
+        dict_handler = []
     try:
         if_B1_R1 = (re.search("[A-Za-z]",Floor).span()[1])
         reverse_Floor = Floor[::-1]

@@ -1,0 +1,1569 @@
+[
+    {
+        "_id": "TPS_1_1-RM_T-hour-informed-alarm",
+        "name": "機房室內溫度過高",
+        "level": "警報",
+        "description": "TPS_1_1-RM_T-機房室內溫度過高",
+        "labels": [
+            {
+                "device": "5892930d-c845-4043-b97b-e53d4b658ffe"
+            },
+            {
+                "floor": "TPKD-1"
+            },
+            {
+                "point": "TPS_1_1-RM_T"
+            },
+            {
+                "deviceType": "TPS"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/TPS_1_1-RM_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>-1 and Timestamp(x.time).hour<24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_1_1-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_1_1-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_1_1-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_1_1-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"technician\",\"developer\"]},\"silent_time\": 0}"
+            }
+        ]
+    },
+    {
+        "_id": "TPS_2_2-RM_T-hour-informed-alarm",
+        "name": "機房室內溫度過高",
+        "level": "警報",
+        "description": "TPS_2_2-RM_T-機房室內溫度過高",
+        "labels": [
+            {
+                "device": "b257ba91-71a6-4361-9560-1f8d90c8eebc"
+            },
+            {
+                "floor": "TPKD-2"
+            },
+            {
+                "point": "TPS_2_2-RM_T"
+            },
+            {
+                "deviceType": "TPS"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/TPS_2_2-RM_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>-1 and Timestamp(x.time).hour<24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_2_2-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_2_2-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_2_2-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_2_2-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"technician\",\"developer\"]},\"silent_time\": 0}"
+            }
+        ]
+    },
+    {
+        "_id": "TPS_3_3-RM_T-hour-informed-alarm",
+        "name": "機房室內溫度過高",
+        "level": "警報",
+        "description": "TPS_3_3-RM_T-機房室內溫度過高",
+        "labels": [
+            {
+                "device": "1c8315ed-82f2-4f72-ab58-5c5e3f596301"
+            },
+            {
+                "floor": "TPKD-3"
+            },
+            {
+                "point": "TPS_3_3-RM_T"
+            },
+            {
+                "deviceType": "TPS"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/TPS_3_3-RM_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>-1 and Timestamp(x.time).hour<24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_3_3-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_3_3-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_3_3-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_3_3-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"technician\",\"developer\"]},\"silent_time\": 0}"
+            }
+        ]
+    },
+    {
+        "_id": "TPS_4_4-RM_T-hour-informed-alarm",
+        "name": "機房室內溫度過高",
+        "level": "警報",
+        "description": "TPS_4_4-RM_T-機房室內溫度過高",
+        "labels": [
+            {
+                "device": "86f8debf-b060-4d3b-979f-27ba07a72a4b"
+            },
+            {
+                "floor": "TPKD-4"
+            },
+            {
+                "point": "TPS_4_4-RM_T"
+            },
+            {
+                "deviceType": "TPS"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/TPS_4_4-RM_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>-1 and Timestamp(x.time).hour<24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_4_4-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_4_4-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_4_4-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_4_4-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"technician\",\"developer\"]},\"silent_time\": 0}"
+            }
+        ]
+    },
+    {
+        "_id": "TPS_5_5-RM_T-hour-informed-alarm",
+        "name": "機房室內溫度過高",
+        "level": "警報",
+        "description": "TPS_5_5-RM_T-機房室內溫度過高",
+        "labels": [
+            {
+                "device": "b83432bf-fb6a-4c02-986e-03a1ee3a2421"
+            },
+            {
+                "floor": "TPKD-5"
+            },
+            {
+                "point": "TPS_5_5-RM_T"
+            },
+            {
+                "deviceType": "TPS"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/TPS_5_5-RM_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>-1 and Timestamp(x.time).hour<24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_5_5-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_5_5-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_5_5-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_5_5-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"technician\",\"developer\"]},\"silent_time\": 0}"
+            }
+        ]
+    },
+    {
+        "_id": "TPS_6_6-RM_T-hour-informed-alarm",
+        "name": "機房室內溫度過高",
+        "level": "警報",
+        "description": "TPS_6_6-RM_T-機房室內溫度過高",
+        "labels": [
+            {
+                "device": "e78e94a2-2864-46b9-b78d-3cf0505d1d0f"
+            },
+            {
+                "floor": "TPKD-6"
+            },
+            {
+                "point": "TPS_6_6-RM_T"
+            },
+            {
+                "deviceType": "TPS"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/TPS_6_6-RM_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>-1 and Timestamp(x.time).hour<24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_6_6-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_6_6-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_6_6-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_6_6-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"technician\",\"developer\"]},\"silent_time\": 0}"
+            }
+        ]
+    },
+    {
+        "_id": "TPS_7_7-RM_T-hour-informed-alarm",
+        "name": "機房室內溫度過高",
+        "level": "警報",
+        "description": "TPS_7_7-RM_T-機房室內溫度過高",
+        "labels": [
+            {
+                "device": "bd061ab0-9ef3-4157-a889-5f632afafa53"
+            },
+            {
+                "floor": "TPKD-7"
+            },
+            {
+                "point": "TPS_7_7-RM_T"
+            },
+            {
+                "deviceType": "TPS"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/TPS_7_7-RM_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>-1 and Timestamp(x.time).hour<24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_7_7-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_7_7-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_7_7-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_7_7-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"technician\",\"developer\"]},\"silent_time\": 0}"
+            }
+        ]
+    },
+    {
+        "_id": "TPS_8_8-RM_T-hour-informed-alarm",
+        "name": "機房室內溫度過高",
+        "level": "警報",
+        "description": "TPS_8_8-RM_T-機房室內溫度過高",
+        "labels": [
+            {
+                "device": "989fb7b2-b410-4906-8745-23538cef9839"
+            },
+            {
+                "floor": "TPKD-8"
+            },
+            {
+                "point": "TPS_8_8-RM_T"
+            },
+            {
+                "deviceType": "TPS"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/TPS_8_8-RM_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>-1 and Timestamp(x.time).hour<24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_8_8-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_8_8-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_8_8-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_8_8-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"technician\",\"developer\"]},\"silent_time\": 0}"
+            }
+        ]
+    },
+    {
+        "_id": "TPS_9_9-RM_T-hour-informed-alarm",
+        "name": "機房室內溫度過高",
+        "level": "警報",
+        "description": "TPS_9_9-RM_T-機房室內溫度過高",
+        "labels": [
+            {
+                "device": "a342a340-f4ef-42d0-8e6e-1301b0c544da"
+            },
+            {
+                "floor": "TPKD-9"
+            },
+            {
+                "point": "TPS_9_9-RM_T"
+            },
+            {
+                "deviceType": "TPS"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/TPS_9_9-RM_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>-1 and Timestamp(x.time).hour<24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_9_9-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_9_9-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_9_9-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_9_9-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"technician\",\"developer\"]},\"silent_time\": 0}"
+            }
+        ]
+    },
+    {
+        "_id": "TPS_10_11-RM_T-hour-informed-alarm",
+        "name": "機房室內溫度過高",
+        "level": "警報",
+        "description": "TPS_10_11-RM_T-機房室內溫度過高",
+        "labels": [
+            {
+                "device": "9cc1af24-c605-4f6c-a1ab-8fc802207344"
+            },
+            {
+                "floor": "TPKD-11"
+            },
+            {
+                "point": "TPS_10_11-RM_T"
+            },
+            {
+                "deviceType": "TPS"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/TPS_10_11-RM_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>-1 and Timestamp(x.time).hour<24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_10_11-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_10_11-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_10_11-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_10_11-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"technician\",\"developer\"]},\"silent_time\": 0}"
+            }
+        ]
+    },
+    {
+        "_id": "TPS_11_12-RM_T-hour-informed-alarm",
+        "name": "機房室內溫度過高",
+        "level": "警報",
+        "description": "TPS_11_12-RM_T-機房室內溫度過高",
+        "labels": [
+            {
+                "device": "e43e8a35-c60d-407c-8b17-5aa0b01c81c4"
+            },
+            {
+                "floor": "TPKD-12"
+            },
+            {
+                "point": "TPS_11_12-RM_T"
+            },
+            {
+                "deviceType": "TPS"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/TPS_11_12-RM_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>-1 and Timestamp(x.time).hour<24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_11_12-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_11_12-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_11_12-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_11_12-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"technician\",\"developer\"]},\"silent_time\": 0}"
+            }
+        ]
+    },
+    {
+        "_id": "TPS_12_13-RM_T-hour-informed-alarm",
+        "name": "機房室內溫度過高",
+        "level": "警報",
+        "description": "TPS_12_13-RM_T-機房室內溫度過高",
+        "labels": [
+            {
+                "device": "8cfa1504-1df2-4d76-b3bd-1c4cf282db07"
+            },
+            {
+                "floor": "TPKD-13"
+            },
+            {
+                "point": "TPS_12_13-RM_T"
+            },
+            {
+                "deviceType": "TPS"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/TPS_12_13-RM_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>-1 and Timestamp(x.time).hour<24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_12_13-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_12_13-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_12_13-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_12_13-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"technician\",\"developer\"]},\"silent_time\": 0}"
+            }
+        ]
+    },
+    {
+        "_id": "TPS_13_14-RM_T-hour-informed-alarm",
+        "name": "機房室內溫度過高",
+        "level": "警報",
+        "description": "TPS_13_14-RM_T-機房室內溫度過高",
+        "labels": [
+            {
+                "device": "20a94765-3a2a-476a-b7e1-ebe2665fb2ec"
+            },
+            {
+                "floor": "TPKD-14"
+            },
+            {
+                "point": "TPS_13_14-RM_T"
+            },
+            {
+                "deviceType": "TPS"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/TPS_13_14-RM_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>-1 and Timestamp(x.time).hour<24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_13_14-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_13_14-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_13_14-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_13_14-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"technician\",\"developer\"]},\"silent_time\": 0}"
+            }
+        ]
+    },
+    {
+        "_id": "TPS_14_15-RM_T-hour-informed-alarm",
+        "name": "機房室內溫度過高",
+        "level": "警報",
+        "description": "TPS_14_15-RM_T-機房室內溫度過高",
+        "labels": [
+            {
+                "device": "30effbd5-ab74-4ff4-bbf1-59ad8229c2b7"
+            },
+            {
+                "floor": "TPKD-15"
+            },
+            {
+                "point": "TPS_14_15-RM_T"
+            },
+            {
+                "deviceType": "TPS"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/TPS_14_15-RM_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>-1 and Timestamp(x.time).hour<24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_14_15-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_14_15-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_14_15-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_14_15-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"technician\",\"developer\"]},\"silent_time\": 0}"
+            }
+        ]
+    },
+    {
+        "_id": "TPS_15_16-RM_T-hour-informed-alarm",
+        "name": "機房室內溫度過高",
+        "level": "警報",
+        "description": "TPS_15_16-RM_T-機房室內溫度過高",
+        "labels": [
+            {
+                "device": "6b3aeeea-40a4-419b-87e5-e5a704de0e32"
+            },
+            {
+                "floor": "TPKD-16"
+            },
+            {
+                "point": "TPS_15_16-RM_T"
+            },
+            {
+                "deviceType": "TPS"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/TPS_15_16-RM_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>-1 and Timestamp(x.time).hour<24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_15_16-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_15_16-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_15_16-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_15_16-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"technician\",\"developer\"]},\"silent_time\": 0}"
+            }
+        ]
+    },
+    {
+        "_id": "TPS_16_1-RM_T-hour-informed-alarm",
+        "name": "機房室內溫度過高",
+        "level": "警報",
+        "description": "TPS_16_1-RM_T-機房室內溫度過高",
+        "labels": [
+            {
+                "device": "12827494-f20d-4da2-bad8-7732b77e8c74"
+            },
+            {
+                "floor": "TPKD-1"
+            },
+            {
+                "point": "TPS_16_1-RM_T"
+            },
+            {
+                "deviceType": "TPS"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/TPS_16_1-RM_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>-1 and Timestamp(x.time).hour<24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_16_1-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_16_1-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_16_1-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_16_1-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"technician\",\"developer\"]},\"silent_time\": 0}"
+            }
+        ]
+    },
+    {
+        "_id": "TPS_17_3-RM_T-hour-informed-alarm",
+        "name": "機房室內溫度過高",
+        "level": "警報",
+        "description": "TPS_17_3-RM_T-機房室內溫度過高",
+        "labels": [
+            {
+                "device": "06d594fc-7cd5-41c9-9ab8-33fb05bf46f9"
+            },
+            {
+                "floor": "TPKD-3"
+            },
+            {
+                "point": "TPS_17_3-RM_T"
+            },
+            {
+                "deviceType": "TPS"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/TPS_17_3-RM_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>-1 and Timestamp(x.time).hour<24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_17_3-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_17_3-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_17_3-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_17_3-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"technician\",\"developer\"]},\"silent_time\": 0}"
+            }
+        ]
+    },
+    {
+        "_id": "TPS_18_4-RM_T-hour-informed-alarm",
+        "name": "機房室內溫度過高",
+        "level": "警報",
+        "description": "TPS_18_4-RM_T-機房室內溫度過高",
+        "labels": [
+            {
+                "device": "c1770d58-e342-4c6b-8f68-ff0fe8cc778d"
+            },
+            {
+                "floor": "TPKD-4"
+            },
+            {
+                "point": "TPS_18_4-RM_T"
+            },
+            {
+                "deviceType": "TPS"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/TPS_18_4-RM_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>-1 and Timestamp(x.time).hour<24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_18_4-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_18_4-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_18_4-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_18_4-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"technician\",\"developer\"]},\"silent_time\": 0}"
+            }
+        ]
+    },
+    {
+        "_id": "TPS_19_5-RM_T-hour-informed-alarm",
+        "name": "機房室內溫度過高",
+        "level": "警報",
+        "description": "TPS_19_5-RM_T-機房室內溫度過高",
+        "labels": [
+            {
+                "device": "bf37ddac-d0ad-4ccc-b1c0-ea64c93481d9"
+            },
+            {
+                "floor": "TPKD-5"
+            },
+            {
+                "point": "TPS_19_5-RM_T"
+            },
+            {
+                "deviceType": "TPS"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/TPS_19_5-RM_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>-1 and Timestamp(x.time).hour<24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_19_5-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_19_5-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_19_5-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_19_5-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"technician\",\"developer\"]},\"silent_time\": 0}"
+            }
+        ]
+    },
+    {
+        "_id": "TPS_20_6-RM_T-hour-informed-alarm",
+        "name": "機房室內溫度過高",
+        "level": "警報",
+        "description": "TPS_20_6-RM_T-機房室內溫度過高",
+        "labels": [
+            {
+                "device": "173e2f9f-5db1-4132-8145-f82306807a31"
+            },
+            {
+                "floor": "TPKD-6"
+            },
+            {
+                "point": "TPS_20_6-RM_T"
+            },
+            {
+                "deviceType": "TPS"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/TPS_20_6-RM_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>-1 and Timestamp(x.time).hour<24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_20_6-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_20_6-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_20_6-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_20_6-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"technician\",\"developer\"]},\"silent_time\": 0}"
+            }
+        ]
+    },
+    {
+        "_id": "TPS_21_7-RM_T-hour-informed-alarm",
+        "name": "機房室內溫度過高",
+        "level": "警報",
+        "description": "TPS_21_7-RM_T-機房室內溫度過高",
+        "labels": [
+            {
+                "device": "920e6980-fecf-415b-880b-35142bc10a2d"
+            },
+            {
+                "floor": "TPKD-7"
+            },
+            {
+                "point": "TPS_21_7-RM_T"
+            },
+            {
+                "deviceType": "TPS"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/TPS_21_7-RM_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>-1 and Timestamp(x.time).hour<24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_21_7-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_21_7-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_21_7-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_21_7-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"technician\",\"developer\"]},\"silent_time\": 0}"
+            }
+        ]
+    },
+    {
+        "_id": "TPS_22_8-RM_T-hour-informed-alarm",
+        "name": "機房室內溫度過高",
+        "level": "警報",
+        "description": "TPS_22_8-RM_T-機房室內溫度過高",
+        "labels": [
+            {
+                "device": "c8dc31d9-2da6-42b8-922f-d46959bf241a"
+            },
+            {
+                "floor": "TPKD-8"
+            },
+            {
+                "point": "TPS_22_8-RM_T"
+            },
+            {
+                "deviceType": "TPS"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/TPS_22_8-RM_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>-1 and Timestamp(x.time).hour<24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_22_8-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_22_8-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_22_8-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_22_8-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"technician\",\"developer\"]},\"silent_time\": 0}"
+            }
+        ]
+    },
+    {
+        "_id": "TPS_23_9-RM_T-hour-informed-alarm",
+        "name": "機房室內溫度過高",
+        "level": "警報",
+        "description": "TPS_23_9-RM_T-機房室內溫度過高",
+        "labels": [
+            {
+                "device": "840dfaba-1e6c-4c0c-aced-3928b3fa9243"
+            },
+            {
+                "floor": "TPKD-9"
+            },
+            {
+                "point": "TPS_23_9-RM_T"
+            },
+            {
+                "deviceType": "TPS"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/TPS_23_9-RM_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>-1 and Timestamp(x.time).hour<24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_23_9-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_23_9-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_23_9-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_23_9-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"technician\",\"developer\"]},\"silent_time\": 0}"
+            }
+        ]
+    },
+    {
+        "_id": "TPS_24_11-RM_T-hour-informed-alarm",
+        "name": "機房室內溫度過高",
+        "level": "警報",
+        "description": "TPS_24_11-RM_T-機房室內溫度過高",
+        "labels": [
+            {
+                "device": "4b2721c6-6178-4c24-8160-d78b71ce12b1"
+            },
+            {
+                "floor": "TPKD-11"
+            },
+            {
+                "point": "TPS_24_11-RM_T"
+            },
+            {
+                "deviceType": "TPS"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/TPS_24_11-RM_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>-1 and Timestamp(x.time).hour<24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_24_11-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_24_11-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_24_11-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_24_11-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"technician\",\"developer\"]},\"silent_time\": 0}"
+            }
+        ]
+    },
+    {
+        "_id": "TPS_25_12-RM_T-hour-informed-alarm",
+        "name": "機房室內溫度過高",
+        "level": "警報",
+        "description": "TPS_25_12-RM_T-機房室內溫度過高",
+        "labels": [
+            {
+                "device": "0a9598a5-0043-41fc-b343-12ef97f4824f"
+            },
+            {
+                "floor": "TPKD-12"
+            },
+            {
+                "point": "TPS_25_12-RM_T"
+            },
+            {
+                "deviceType": "TPS"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/TPS_25_12-RM_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>-1 and Timestamp(x.time).hour<24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_25_12-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_25_12-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_25_12-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_25_12-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"technician\",\"developer\"]},\"silent_time\": 0}"
+            }
+        ]
+    },
+    {
+        "_id": "TPS_26_13-RM_T-hour-informed-alarm",
+        "name": "機房室內溫度過高",
+        "level": "警報",
+        "description": "TPS_26_13-RM_T-機房室內溫度過高",
+        "labels": [
+            {
+                "device": "d2c60534-ef95-45ff-9a15-f4c83665fc47"
+            },
+            {
+                "floor": "TPKD-13"
+            },
+            {
+                "point": "TPS_26_13-RM_T"
+            },
+            {
+                "deviceType": "TPS"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/TPS_26_13-RM_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>-1 and Timestamp(x.time).hour<24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_26_13-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_26_13-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_26_13-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_26_13-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"technician\",\"developer\"]},\"silent_time\": 0}"
+            }
+        ]
+    },
+    {
+        "_id": "TPS_27_14-RM_T-hour-informed-alarm",
+        "name": "機房室內溫度過高",
+        "level": "警報",
+        "description": "TPS_27_14-RM_T-機房室內溫度過高",
+        "labels": [
+            {
+                "device": "b60daf5d-da98-4746-a8db-dee3621277e9"
+            },
+            {
+                "floor": "TPKD-14"
+            },
+            {
+                "point": "TPS_27_14-RM_T"
+            },
+            {
+                "deviceType": "TPS"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/TPS_27_14-RM_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>-1 and Timestamp(x.time).hour<24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_27_14-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_27_14-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_27_14-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_27_14-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"technician\",\"developer\"]},\"silent_time\": 0}"
+            }
+        ]
+    },
+    {
+        "_id": "TPS_28_15-RM_T-hour-informed-alarm",
+        "name": "機房室內溫度過高",
+        "level": "警報",
+        "description": "TPS_28_15-RM_T-機房室內溫度過高",
+        "labels": [
+            {
+                "device": "0b1f5519-e499-47a7-abc1-3b218703ee10"
+            },
+            {
+                "floor": "TPKD-15"
+            },
+            {
+                "point": "TPS_28_15-RM_T"
+            },
+            {
+                "deviceType": "TPS"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/TPS_28_15-RM_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>-1 and Timestamp(x.time).hour<24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_28_15-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_28_15-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_28_15-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_28_15-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"technician\",\"developer\"]},\"silent_time\": 0}"
+            }
+        ]
+    },
+    {
+        "_id": "TPS_29_16-RM_T-hour-informed-alarm",
+        "name": "機房室內溫度過高",
+        "level": "警報",
+        "description": "TPS_29_16-RM_T-機房室內溫度過高",
+        "labels": [
+            {
+                "device": "bb1b95e8-210d-4068-82a6-4df8066061c0"
+            },
+            {
+                "floor": "TPKD-16"
+            },
+            {
+                "point": "TPS_29_16-RM_T"
+            },
+            {
+                "deviceType": "TPS"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/TPS_29_16-RM_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>-1 and Timestamp(x.time).hour<24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_29_16-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_29_16-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"TPS_29_16-RM_T-hour-informed-alarm\",\"method\":[\"email\",\"fcm\",\"line\"],\"title\":\"機房室內溫度過高\",\"message\":[\"TPS_29_16-機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"technician\",\"developer\"]},\"silent_time\": 0}"
+            }
+        ]
+    }
+
+]

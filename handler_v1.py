@@ -1,5 +1,5 @@
 #%%
-import pandas
+import pandas as pd
 import json
 # %%
 def handler_creater_dev(IdDescription,Message_Title,Message,SilentTime):
@@ -96,5 +96,5 @@ if __name__ == '__main__':
     Message_Title = "FCU_通訊異常"
     Message = "上班時間FCU通訊異常"
     IdDescription = "FCU_601_14-COM_AL_time"
-    print(handler_creater_dev_and_off(IdDescription,Message_Title,Message,SilentTime))
+    print(type(handler_creater_dev_and_off(IdDescription,Message_Title,Message,SilentTime)))
 # %%

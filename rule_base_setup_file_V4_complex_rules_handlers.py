@@ -130,20 +130,7 @@ y_rule = {"y1":{"PointType":"SA_T","LowerBound":28},
     }
 
 
-DeviceType = "AHU"
-PointType = "ST1"
-EventName = "上班時間AHU未運轉"
-Level = "警報"
-x_rule = {"x":{"PointType":"ST1","SetValue":"False"}}
-y_rule = {"y1":{"PointType":"hour","UpperBound":19,"LowerBound":7.5},
-"y2":{"PointType":"weekday","UpperBound":4,"LowerBound":-1}
-    }
-Message_Title = "AHU_運轉異常"
-SilentTime = "3600"
-Message = "上班時間DEVICEID未運轉"
-message_target = "dev_off"
-save_name = "AHU_ST1_time_informed.txt"
-save_name_ID = F"{save_name[0:-4]}_ID.txt"
+
 
 
 # 漏水警報
@@ -169,20 +156,64 @@ save_name_ID = F"{save_name[0:-4]}_ID.txt"
 # y_rule = {"y3":{"PointType":"time","UpperBound":18,"LowerBound":8}
 #     }
 
-# PointId = "AHU_37_15_PRE-CV_POS"
-# Description = F"{PointId}-{EventName}"
-# Floor = "15"
-# DeviceId = "AHU_37_15_PRE"
-# GUID = "a5a49315-3bb4-444c-83f8-3a4ed2da0189"
-# x_rule = {"x":{"DeviceId":"AHU_37_15_PRE","PointType":"CV_POS","LowerBound":70}}
-# y_rule = {"y1":{
-#     "DeviceId":"AHU_37_15_PRE","PointType":"SA_T","UpperBound":28},
-#     "y2":{
-#     "DeviceId":"AHU_37_15_PRE","PointType":"FAN_RUN_CMD","SetValue":"True"},z
-#     "y3":{
-#     "DeviceId":"time","PointType":"time","UpperBound":18,"LowerBound":8}
+DeviceType = "AHU"
+PointType = "ST1"
+EventName = "上班時間AHU未運轉"
+Level = "警報"
+x_rule = {"x":{"PointType":"ST1","SetValue":"False"}}
+y_rule = {"y1":{"PointType":"hour","UpperBound":19,"LowerBound":7.5},
+"y2":{"PointType":"weekday","UpperBound":5,"LowerBound":-1}
+    }
+Message_Title = "AHU_運轉異常"
+SilentTime = "3600"
+Message = "上班時間DEVICEID未運轉"
+message_target = "dev_off"
+save_name = "AHU_ST1_time_informed.txt"
+save_name_ID = F"{save_name[0:-4]}_ID.txt"
+
+# TPS 警報
+DeviceType = "TPS"
+PointType = "RM_T"
+EventName = "機房室內溫度過高"
+Level = "警報"
+x_rule = {"x":{"PointType":"RM_T","LowerBound":"28"}}
+y_rule = {"y1":{"PointType":"hour","UpperBound":24,"LowerBound":-1},
+    }
+Message_Title = "機房室內溫度過高"
+SilentTime = "0"
+Message = "DEVICEID-機房室內溫度過高"
+message_target = "dev_off"
+save_name = "TPS_RM_T_time_informed.txt"
+save_name_ID = Fr"待推送規則/{save_name[0:-4]}_ID.txt"
+
+# AHU 警報 送風溫度
+DeviceType = "AHU"
+PointType = "SA_T"
+EventName = "AHU上班時間出風溫度過高"
+Level = "警報"
+x_rule = {"x":{"PointType":"SA_T","LowerBound":"28"}}
+y_rule = {"y1":{"PointType":"hour","UpperBound":20,"LowerBound":8},
+          "y2":{"PointType":"weekday","UpperBound":4,"LowerBound":0}}
+Message_Title = "機房室內溫度過高"
+SilentTime = "0"
+Message = "DEVICEID-送風溫度過高"
+message_target = "None"
+save_name = "AHU_SA_T_time_informed.txt"
+save_name_ID = Fr"{save_name[0:-4]}_ID.txt"
+
+# DeviceType = "FCU"
+# PointType = "RA_T"
+# EventName = "實驗室內溫度過高"
+# Level = "警報"
+# x_rule = {"x":{"PointType":"RA_T","LowerBound":"25"}}
+# y_rule = {"y1":{"PointType":"hour","UpperBound":24,"LowerBound":-1},
 #     }
-# Set_up_rules(DeviceType=DeviceType,PointType=PointType,EventName=EventName,Level=Level,x_rule=x_rule,y_rule=y_rule).create_text()
+# Message_Title = "實驗室室內溫度過高"
+# SilentTime = "0"
+# Message = "DEVICEID-實驗室內溫度過高"
+# message_target = "dev_off"
+# save_name = "FCU_LAB_RA_T_time_informed.txt"
+# save_name_ID = F"{save_name[0:-4]}_ID.txt"
 
 
 Set_up_rules(DeviceType=DeviceType, PointType=PointType, EventName=EventName, Level=Level, x_rule=x_rule, y_rule=y_rule, Message_Title=Message_Title, Message=Message, SilentTime=SilentTime, message_target=message_target).save_text(save_name)
