@@ -1,0 +1,7 @@
+[
+    "CH_1_2B-CW_WFS_AL_alarm",
+    "CH_2_2B-CW_WFS_AL_alarm",
+    "CH_3_1B-CW_WFS_AL_alarm",
+    "CH_4_1B-CW_WFS_AL_alarm",
+    "CH_5_1B-CW_WFS_AL_alarm"
+]

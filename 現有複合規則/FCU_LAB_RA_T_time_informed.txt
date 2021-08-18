@@ -1,0 +1,56 @@
+[
+    {
+        "_id": "FCU_505_12-RA_T-hour-informed-alarm",
+        "name": "實驗室內溫度過高",
+        "level": "警報",
+        "description": "FCU_505_12-RA_T-實驗室內溫度過高",
+        "labels": [
+            {
+                "device": "9c4739c2-6546-4738-9dd6-645f1c032827"
+            },
+            {
+                "floor": "TPKD-12"
+            },
+            {
+                "point": "FCU_505_12-RA_T"
+            },
+            {
+                "deviceType": "FCU"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/FCU_505_12-RA_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>25) and (Timestamp(x.time).hour>=-1 and Timestamp(x.time).hour<=24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"FCU_505_12-RA_T-hour-informed-alarm\",\"method\":[{\"email\":null},{\"fcm\":null},{\"line\":null},{\"request\":{\"description\":\"FCU_505_12-RA_T-實驗室內溫度過高\",\"reporter\":{\"name\":\"事件規則機器人\",\"email\":\"\",\"unit\":\"事件中心\",\"phone\":\"\"},\"io_point\":{\"id\":\"FCU_505_12-RA_T\"},\"device\":{\"name\":\"FCU_505_12\"},\"alert_id\": \"<Enforcer.ActiveAlert>\"}}],\"title\":\"實驗室室內溫度過高\",\"message\":[\"FCU_505_12-實驗室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0,\"alert_id\": \"<Enforcer.ActiveAlert>\",\"tenant\": \"google\"}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"FCU_505_12-RA_T-hour-informed-alarm\",\"method\":[{\"email\":null},{\"fcm\":null},{\"line\":null},{\"request\":{\"description\":\"FCU_505_12-RA_T-實驗室內溫度過高\",\"reporter\":{\"name\":\"事件規則機器人\",\"email\":\"\",\"unit\":\"事件中心\",\"phone\":\"\"},\"io_point\":{\"id\":\"FCU_505_12-RA_T\"},\"device\":{\"name\":\"FCU_505_12\"},\"alert_id\": \"<Enforcer.ActiveAlert>\"}}],\"title\":\"實驗室室內溫度過高\",\"message\":[\"FCU_505_12-實驗室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0,\"alert_id\": \"<Enforcer.ActiveAlert>\",\"tenant\": \"google\"}"
+            }
+        ]
+    }
+]

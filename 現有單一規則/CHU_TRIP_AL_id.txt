@@ -1,0 +1,1 @@
+["CH_1_2B-TRIP_AL_alarm", "CH_2_2B-TRIP_AL_alarm", "CH_3_1B-TRIP_AL_alarm", "CH_4_1B-TRIP_AL_alarm", "CH_5_1B-TRIP_AL_alarm"]

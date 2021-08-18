@@ -9,7 +9,7 @@ class Set_up_rules:
 
     def __init__(self,DeviceType,PointType,EventName,Level,x_rule,y_rule,Message_Title,Message,SilentTime,message_target):
 
-        self.mapping_doc = r'210310_point-mappings_v18.xlsx'
+        self.mapping_doc = r'C:\Users\Steve\Desktop\KASE\TPKD\TPKD_事件中心\API_demo\210602_point-mappings_new_v3-1.xlsx'
         self.df_list = pd.read_excel(self.mapping_doc,sheet_name='DeviceList')
         self.DeviceType = DeviceType
         self.PointType = PointType
@@ -262,34 +262,23 @@ save_name = "SHWP_DPS_AL_informed_BA_inform.txt"
 save_name_ID = F"{save_name[0:-4]}_ID.txt"
 
 # # LAB FCU
-# DeviceType = "FCU"
-# PointType = "RA_T"
-# EventName = "實驗室內溫度過高"
-# Level = "警報"
-# x_rule = {"x":{"PointType":"RA_T","LowerBound":"25"}}
-# y_rule = {"y1":{"PointType":"hour","UpperBound":24,"LowerBound":-1},
-#     }
-# Message_Title = "實驗室室內溫度過高"
-# SilentTime = "0"
-# Message = "DEVICEID-實驗室內溫度過高"
-# message_target = "dev_off"
-# save_name = "FCU_LAB_RA_T_time_informed.txt"
-# save_name_ID = F"{save_name[0:-4]}_ID.txt"
-
-
-DeviceType = "LDS"
-PointType = "LEAK_AL"
-EventName = "漏液偵測警報"
-Level = "嚴重"
-x_rule = {"x":{"PointType":"LEAK_AL","SetValue":"True"}}
-y_rule = {"y1":{"PointType":"hour","UpperBound":24,"LowerBound":-1}
+DeviceType = "FCU"
+PointType = "RA_T"
+EventName = "實驗室內溫度過高"
+Level = "警報"
+x_rule = {"x":{"PointType":"RA_T","LowerBound":"25"}}
+y_rule = {"y1":{"PointType":"hour","UpperBound":24,"LowerBound":-1},
     }
-Message_Title = "LDS-漏液偵測警報"
+Message_Title = "實驗室室內溫度過高"
 SilentTime = "0"
-Message = "DEVICEID-漏液偵測警報"
+Message = "DEVICEID-實驗室內溫度過高"
 message_target = "dev_off"
-save_name = "LDS_LEAK_AL_informed_BA_inform.txt"
+save_name = "FCU_LAB_RA_T_time_informed.txt"
 save_name_ID = F"{save_name[0:-4]}_ID.txt"
+
+
+
+
 
 Set_up_rules(DeviceType=DeviceType, PointType=PointType, EventName=EventName, Level=Level, x_rule=x_rule, y_rule=y_rule, Message_Title=Message_Title, Message=Message, SilentTime=SilentTime, message_target=message_target).save_text(save_name)
 Set_up_rules(DeviceType=DeviceType, PointType=PointType, EventName=EventName, Level=Level, x_rule=x_rule, y_rule=y_rule, Message_Title=Message_Title, Message=Message, SilentTime=SilentTime, message_target=message_target).every_id_list(save_name_ID)

@@ -2,7 +2,7 @@
 import pandas as pd
 import json
 import re
-import handler_v3
+import handler_v4_alertID
 
 #%%
 # transfer import variables to dict form
@@ -62,11 +62,11 @@ def rule_dict_create(ori_rule,x_rule):
 
 def dict_id_create_complex_rules(IdDescription,EventName,Level,PointId,Description,DeviceType,Floor,DeviceId,GUID,calculator,Message_Title,Message,SilentTime,message_target):
     if message_target == "dev":
-        dict_handler = handler_v3.handler_creater_dev(IdDescription=IdDescription,Description=Description,Message_Title=Message_Title,Message=Message,Point_ID=PointId,Device_ID=DeviceId,SilentTime=SilentTime)
+        dict_handler = handler_v4_alertID.handler_creater_dev(IdDescription=IdDescription,Description=Description,Message_Title=Message_Title,Message=Message,Point_ID=PointId,Device_ID=DeviceId,SilentTime=SilentTime)
     elif message_target == "off":
-        dict_handler = handler_v3.handler_creater_off(IdDescription=IdDescription,Description=Description,Message_Title=Message_Title,Message=Message,Point_ID=PointId,Device_ID=DeviceId,SilentTime=SilentTime)
+        dict_handler = handler_v4_alertID.handler_creater_off(IdDescription=IdDescription,Description=Description,Message_Title=Message_Title,Message=Message,Point_ID=PointId,Device_ID=DeviceId,SilentTime=SilentTime)
     elif message_target == "dev_off":
-        dict_handler = handler_v3.handler_creater_dev_and_off(IdDescription=IdDescription,Description=Description,Message_Title=Message_Title,Message=Message,Point_ID=PointId,Device_ID=DeviceId,SilentTime=SilentTime)
+        dict_handler = handler_v4_alertID.handler_creater_dev_and_off(IdDescription=IdDescription,Description=Description,Message_Title=Message_Title,Message=Message,Point_ID=PointId,Device_ID=DeviceId,SilentTime=SilentTime)
     else:
         dict_handler = []
     try:

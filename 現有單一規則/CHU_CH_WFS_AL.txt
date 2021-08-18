@@ -1,0 +1,212 @@
+[
+    {
+        "_id": "CH_1_2B-CH_WFS_AL_alarm",
+        "name": "冰水流量低量警報",
+        "level": "警報",
+        "description": "CH_1_2B-CH_WFS_AL_冰水流量低量警報",
+        "labels": [
+            {
+                "device": "c2ab79d6-6a4d-4099-9125-5da82daf14d5"
+            },
+            {
+                "floor": "TPKD-2B"
+            },
+            {
+                "floor": "TPKD-B2"
+            },
+            {
+                "point": "CH_1_2B-CH_WFS_AL"
+            },
+            {
+                "deviceType": "CH"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/CH_1_2B-CH_WFS_AL/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "x.value != None and x.value == True "
+                }
+            }
+        },
+        "handlers": []
+    },
+    {
+        "_id": "CH_2_2B-CH_WFS_AL_alarm",
+        "name": "冰水流量低量警報",
+        "level": "警報",
+        "description": "CH_2_2B-CH_WFS_AL_冰水流量低量警報",
+        "labels": [
+            {
+                "device": "175a67d3-60f8-4566-a978-f37ec2b3441b"
+            },
+            {
+                "floor": "TPKD-2B"
+            },
+            {
+                "floor": "TPKD-B2"
+            },
+            {
+                "point": "CH_2_2B-CH_WFS_AL"
+            },
+            {
+                "deviceType": "CH"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/CH_2_2B-CH_WFS_AL/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "x.value != None and x.value == True "
+                }
+            }
+        },
+        "handlers": []
+    },
+    {
+        "_id": "CH_3_1B-CH_WFS_AL_alarm",
+        "name": "冰水流量低量警報",
+        "level": "警報",
+        "description": "CH_3_1B-CH_WFS_AL_冰水流量低量警報",
+        "labels": [
+            {
+                "device": "faeaf49d-d903-4194-82da-74ce9165cfcc"
+            },
+            {
+                "floor": "TPKD-1B"
+            },
+            {
+                "floor": "TPKD-B1"
+            },
+            {
+                "point": "CH_3_1B-CH_WFS_AL"
+            },
+            {
+                "deviceType": "CH"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/CH_3_1B-CH_WFS_AL/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "x.value != None and x.value == True "
+                }
+            }
+        },
+        "handlers": []
+    },
+    {
+        "_id": "CH_4_1B-CH_WFS_AL_alarm",
+        "name": "冰水流量低量警報",
+        "level": "警報",
+        "description": "CH_4_1B-CH_WFS_AL_冰水流量低量警報",
+        "labels": [
+            {
+                "device": "12d7c467-4be0-49be-b96a-382a80aef3c3"
+            },
+            {
+                "floor": "TPKD-1B"
+            },
+            {
+                "floor": "TPKD-B1"
+            },
+            {
+                "point": "CH_4_1B-CH_WFS_AL"
+            },
+            {
+                "deviceType": "CH"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/CH_4_1B-CH_WFS_AL/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "x.value != None and x.value == True "
+                }
+            }
+        },
+        "handlers": []
+    },
+    {
+        "_id": "CH_5_1B-CH_WFS_AL_alarm",
+        "name": "冰水流量低量警報",
+        "level": "警報",
+        "description": "CH_5_1B-CH_WFS_AL_冰水流量低量警報",
+        "labels": [
+            {
+                "device": "90e24589-f49c-4e8d-a339-2f994eb1f069"
+            },
+            {
+                "floor": "TPKD-1B"
+            },
+            {
+                "floor": "TPKD-B1"
+            },
+            {
+                "point": "CH_5_1B-CH_WFS_AL"
+            },
+            {
+                "deviceType": "CH"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/CH_5_1B-CH_WFS_AL/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "x.value != None and x.value == True "
+                }
+            }
+        },
+        "handlers": []
+    }
+]
