@@ -160,6 +160,7 @@ if __name__ == '__main__':
         "y3":{
         "DeviceId":"hour","PointType":"hour","UpperBound":20,"LowerBound":8}
         }
+
     EventName = "上班時間出風溫度未隨冰水閥開度增加降低"
     Level = "警報"
     PointId = "AHU_37_15_PRE-CV_POS"
@@ -180,6 +181,7 @@ if __name__ == '__main__':
         "y3":{
         "DeviceId":"hour","PointType":"hour","UpperBound":18,"LowerBound":8}
         }
+
     # 通知測試
     EventName = "上班時間設備通訊異常"
     Level = "警報"
@@ -200,6 +202,29 @@ if __name__ == '__main__':
     Message_Title = "FCU_通訊異常"
     Message = F"上班時間{DeviceId}通訊異常"
     message_target = "dev_off"
+
+    # EF_LDS_AL weekday 6_21
+    EventName = "上班時間設備通訊異常"
+    Level = "警報"
+    PointId = "FCU_601_14-COM_AL"
+    Description = F"{PointId}-{EventName}"
+    DeviceType = "FCU"
+    Floor = "8"
+    DeviceId = "FCU_601_14"
+    GUID = "461f19ae-68fe-4cd0-8c35-0f1bd223c2f0"
+    x_rule = {"x":{"DeviceId":"FCU_601_14","PointType":"COM_AL","SetValue":"True"}}
+    y_rule = {"y1":{
+        "DeviceId":"hour","PointType":"hour","UpperBound":20,"LowerBound":8},
+        "y2":{
+        "DeviceId":"weekday","PointType":"weekday","UpperBound":4,"LowerBound":-1}
+        }
+    SilentTime = "5"
+    Title = "FCU_COM_AL_warning"
+    Message_Title = "FCU_通訊異常"
+    Message = F"上班時間{DeviceId}通訊異常"
+    message_target = "dev_off"
+
+
     print(main(EventName=EventName,Level=Level,PointId=PointId,Description=Description,DeviceType=DeviceType,Floor=Floor,DeviceId=DeviceId,GUID=GUID,x_rule=x_rule,y_rule=y_rule,Message_Title=Message_Title,Message=Message,SilentTime=SilentTime,message_target=message_target))
 # %%
 

@@ -215,6 +215,20 @@ save_name_ID = Fr"{save_name[0:-4]}_ID.txt"
 # save_name = "FCU_LAB_RA_T_time_informed.txt"
 # save_name_ID = F"{save_name[0:-4]}_ID.txt"
 
+DeviceType = "LDS"
+PointType = "COM_AL"
+EventName = "通訊異常警報"
+Level = "嚴重"
+x_rule = {"x":{"PointType":"COM_AL","SetValue":"True"}}
+y_rule = {"y1":{"PointType":"hour","UpperBound":24,"LowerBound":-1}
+    }
+Message_Title = "LDS-通訊異常警報"
+SilentTime = "3600"
+Message = "DEVICEID-通訊異常警報"
+message_target = "dev_off"
+save_name = "LDS_COM_AL_informed.txt"
+save_name_ID = F"{save_name[0:-4]}_ID.txt"
+
 
 Set_up_rules(DeviceType=DeviceType, PointType=PointType, EventName=EventName, Level=Level, x_rule=x_rule, y_rule=y_rule, Message_Title=Message_Title, Message=Message, SilentTime=SilentTime, message_target=message_target).save_text(save_name)
 Set_up_rules(DeviceType=DeviceType, PointType=PointType, EventName=EventName, Level=Level, x_rule=x_rule, y_rule=y_rule, Message_Title=Message_Title, Message=Message, SilentTime=SilentTime, message_target=message_target).every_id_list(save_name_ID)

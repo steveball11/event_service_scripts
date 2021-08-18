@@ -59,6 +59,7 @@ class Set_up_rules:
         df_setup.columns = ['GUID','PointId','DeviceId']
         df_setup["DeviceType"] = self.DeviceType
         df_setup["PointType"] = self.PointType
+        print(df_setup['DeviceId'])
         df_setup['floor'] = df_setup['DeviceId'].str.split('_').str[-1].values
         df_setup["floor"][df_setup["floor"]=="PRE"] = df_setup['DeviceId'].str.split('_').str[-2].values
 
@@ -90,7 +91,7 @@ class Set_up_rules:
         return combine_txt
 
     def save_text(self,save_txt):
-        text_file = open(save_txt, "w")
+        text_file = open(save_txt, "w",encoding='UTF-8')
         text_file.write(self.combine_txt)
         text_file.close()
         return print("Success")
@@ -99,7 +100,7 @@ class Set_up_rules:
         id_list = []
         for rule in self.Series_post_str:
             id_list.append(eval(rule)[0]["_id"])
-        text_file = open(id_save_txts, "w")
+        text_file = open(id_save_txts, "w",encoding='UTF-8')
         text_file.write(json.dumps(id_list))
         text_file.close()
         print("Save post string id success")
@@ -138,19 +139,68 @@ if __name__ == "__main__":
     Description="二氧化碳濃度過高"
     EventName="二氧化碳濃度過高"
     Level="警報"
+
+    DeviceType = "HHWP"
+    PointType="TRIP_AL"
+    IdDescription="alarm"
+    Expression="x.value != None and x.value == True "
+    Description="熱泵跳脫警報"
+    EventName="熱泵跳脫警報"
+    Level="警報"
+
+    # DeviceType = "SHWP"
+    # PointType="DPS_AL"
+    # IdDescription="alarm"
+    # Expression="x.value != None and x.value == True "
+    # Description="泵浦壓差警報"
+    # EventName="泵浦壓差警報"
+    # Level="警報"
+
+    DeviceType = "PCWP"
+    PointType="DPS_AL"
+    IdDescription="alarm"
+    Expression="x.value != None and x.value == True "
+    Description="泵浦壓差警報"
+    EventName="泵浦壓差警報"
+    Level="警報"
+
+    DeviceType = "CHU"
+    PointType="CH_WFS_AL"
+    IdDescription="alarm"
+    Expression="x.value != None and x.value == True "
+    Description="冰水流量低量警報"
+    EventName="冰水流量低量警報"
+    Level="警報"
+
+    DeviceType = "CHU"
+    PointType="TRIP_AL"
+    IdDescription="alarm"
+    Expression="x.value != None and x.value == True "
+    Description="冰機跳脫警報"
+    EventName="冰機跳脫警報"
+    Level="警報"
+
+    # DeviceType = "EF"
+    # PointType="LSF_AL"
+    # IdDescription="alarm"
+    # Expression="x.value != None and x.value == True "
+    # Description="排風流量低量警報"
+    # EventName="排風流量低量警報"
+    # Level="警報"
+
     a = (Set_up_rules(DeviceType=DeviceType,
                         PointType=PointType,
                         IdDescription=IdDescription,
                         Expression=Expression,
                         Description=Description,
                         EventName=EventName,
-                        Level=Level).save_text("CDS二氧化碳過高警報.txt"))
+                        Level=Level).save_text("CHU_TRIP_AL.txt"))
     a = (Set_up_rules(DeviceType=DeviceType,
                         PointType=PointType,
                         IdDescription=IdDescription,
                         Expression=Expression,
                         Description=Description,
                         EventName=EventName,
-                        Level=Level).every_id_list("CDS二氧化碳過高警報_id.txt"))
+                        Level=Level).every_id_list("CHU_TRIP_AL_id.txt"))
 
 # %%

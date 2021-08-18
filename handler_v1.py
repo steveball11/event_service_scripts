@@ -2,6 +2,7 @@
 import pandas as pd
 import json
 # %%
+# to dev
 def handler_creater_dev(IdDescription,Message_Title,Message,SilentTime):
     dict_handler = {"_t": "api",
             "method": "POST",
@@ -24,6 +25,7 @@ def handler_creater_dev(IdDescription,Message_Title,Message,SilentTime):
 
     return [dict_handler]
 
+# to formal
 def handler_creater_off(IdDescription,Message_Title,Message,SilentTime):
     dict_handler = {"_t": "api",
             "method": "POST",
@@ -46,6 +48,7 @@ def handler_creater_off(IdDescription,Message_Title,Message,SilentTime):
 
     return [dict_handler]
 
+# to formal and dev
 def handler_creater_dev_and_off(IdDescription,Message_Title,Message,SilentTime):
     # def
     dict_handler_dev = {"_t": "api",
@@ -96,5 +99,5 @@ if __name__ == '__main__':
     Message_Title = "FCU_通訊異常"
     Message = "上班時間FCU通訊異常"
     IdDescription = "FCU_601_14-COM_AL_time"
-    print(type(handler_creater_dev_and_off(IdDescription,Message_Title,Message,SilentTime)))
+    ans = (handler_creater_dev_and_off(IdDescription,Message_Title,Message,SilentTime))
 # %%
