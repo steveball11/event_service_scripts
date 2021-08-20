@@ -205,21 +205,34 @@ if __name__ == "__main__":
     # EventName="冰機跳脫警報"
     # Level="警報"
 
+    DeviceType = "CHWP"
+    PointType="TRIP_AL"
+    IdDescription="alarm"
+    Expression="x.value != None and x.value == True "
+    Description="一次泵跳脫警報警報"
+    EventName="一次泵跳脫警報警報"
+    Level="警報"
 
-
+    DeviceType = "CHWP"
+    PointType="DPS_AL"
+    IdDescription="alarm"
+    Expression="x.value != None and x.value == True "
+    Description="壓差異常警報"
+    EventName="壓差異常警報"
+    Level="警報"
     a = (Set_up_rules(DeviceType=DeviceType,
                         PointType=PointType,
                         IdDescription=IdDescription,
                         Expression=Expression,
                         Description=Description,
                         EventName=EventName,
-                        Level=Level).save_text("SHWP_DPS_AL.txt"))
+                        Level=Level).save_text("CHWP_DPS_AL.txt"))
     a = (Set_up_rules(DeviceType=DeviceType,
                         PointType=PointType,
                         IdDescription=IdDescription,
                         Expression=Expression,
                         Description=Description,
                         EventName=EventName,
-                        Level=Level).every_id_list("SHWP_DPS_AL_id.txt"))
+                        Level=Level).every_id_list("CHWP_DPS_AL_id.txt"))
 
 # %%

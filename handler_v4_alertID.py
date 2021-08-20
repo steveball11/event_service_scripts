@@ -28,7 +28,7 @@ def handler_creater_dev(IdDescription,Description,Message_Title,Point_ID,Device_
 "tenant": "google"}'
     dict_content_str = dict_content_str.replace("IdDescription",IdDescription)
     dict_content_str = dict_content_str.replace("DESCRIPTION",Description)
-    dict_content_str = dict_content_str.replace("Message_Title",Message_Title)
+    dict_content_str = dict_content_str.replace("MESSAGE_TITLE",Message_Title)
     dict_content_str = dict_content_str.replace("POINT_ID",Point_ID)
     dict_content_str = dict_content_str.replace("DEVICE_ID",Device_ID)
     dict_content_str = dict_content_str.replace("MESSAGE",Message)
@@ -63,7 +63,7 @@ def handler_creater_off(IdDescription,Description,Message_Title,Point_ID,Device_
 "tenant": "google"}'
     dict_content_str = dict_content_str.replace("IdDescription",IdDescription)
     dict_content_str = dict_content_str.replace("DESCRIPTION",Description)
-    dict_content_str = dict_content_str.replace("Message_Title",Message_Title)
+    dict_content_str = dict_content_str.replace("MESSAGE_TITLE",Message_Title)
     dict_content_str = dict_content_str.replace("POINT_ID",Point_ID)
     dict_content_str = dict_content_str.replace("DEVICE_ID",Device_ID)
     dict_content_str = dict_content_str.replace("MESSAGE",Message)

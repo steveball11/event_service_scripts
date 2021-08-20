@@ -246,37 +246,48 @@ message_target = "dev_off"
 save_name = "PCWP_DPS_AL_informed_BA_inform.txt"
 save_name_ID = F"{save_name[0:-4]}_ID.txt"
 
-# SHWP
-DeviceType = "SHWP"
-PointType = "DPS_AL"
-EventName = "泵浦壓差異常警報"
+# FACP
+DeviceType = "FACP"
+PointType = "FIRE_AL1"
+EventName = "火警警報"
 Level = "嚴重"
-x_rule = {"x":{"PointType":"DPS_AL","SetValue":"True"}}
+x_rule = {"x":{"PointType":"FIRE_AL1","SetValue":"True"}}
 y_rule = {"y1":{"PointType":"hour","UpperBound":24,"LowerBound":-1}
     }
-Message_Title = "泵浦壓差異常警報"
-SilentTime = "300"
-Message = "DEVICEID-泵浦壓差異常警報"
-message_target = "dev_off"
-save_name = "SHWP_DPS_AL_informed_BA_inform.txt"
-save_name_ID = F"{save_name[0:-4]}_ID.txt"
-
-# # LAB FCU
-DeviceType = "FCU"
-PointType = "RA_T"
-EventName = "實驗室內溫度過高"
-Level = "警報"
-x_rule = {"x":{"PointType":"RA_T","LowerBound":"25"}}
-y_rule = {"y1":{"PointType":"hour","UpperBound":24,"LowerBound":-1},
-    }
-Message_Title = "實驗室室內溫度過高"
+Message_Title = "火警警報"
 SilentTime = "0"
-Message = "DEVICEID-實驗室內溫度過高"
+Message = "DEVICEID-火警警報"
 message_target = "dev_off"
-save_name = "FCU_LAB_RA_T_time_informed.txt"
+save_name = "FACP_FIRE_AL1_informed_BA_inform.txt"
 save_name_ID = F"{save_name[0:-4]}_ID.txt"
 
+DeviceType = "FACP"
+PointType = "FIRE_AL2"
+EventName = "火警警報"
+Level = "嚴重"
+x_rule = {"x":{"PointType":"FIRE_AL2","SetValue":"True"}}
+y_rule = {"y1":{"PointType":"hour","UpperBound":24,"LowerBound":-1}
+    }
+Message_Title = "火警警報"
+SilentTime = "0"
+Message = "DEVICEID-火警警報"
+message_target = "dev_off"
+save_name = "FACP_FIRE_AL2_informed_BA_inform.txt"
+save_name_ID = F"{save_name[0:-4]}_ID.txt"
 
+DeviceType = "HHWP"
+PointType = "TRIP_AL"
+EventName = "熱泵跳脫警報"
+Level = "嚴重"
+x_rule = {"x":{"PointType":"TRIP_AL","SetValue":"True"}}
+y_rule = {"y1":{"PointType":"hour","UpperBound":24,"LowerBound":-1}
+    }
+Message_Title = "熱泵跳脫警報"
+SilentTime = "0"
+Message = "DEVICEID-熱泵跳脫警報"
+message_target = "dev_off"
+save_name = "HHWP_TRIP_AL_informed_BA_inform.txt"
+save_name_ID = F"{save_name[0:-4]}_ID.txt"
 
 
 

@@ -36,12 +36,12 @@ def handler_creater_off(IdDescription,Message_Title,Message,SilentTime):
 "act":"push",\
 "id":"IdDescription",\
 "method":["email","fcm","line"],\
-"title":"Message_Title",\
+"title":"MESSAGE_TITLE",\
 "message":["MESSAGE"],\
 "target":{"role_name":["FC","Technician","Developer"]},\
 "silent_time": SLIENTTIME}'
     dict_content_str = dict_content_str.replace("IdDescription",IdDescription)
-    dict_content_str = dict_content_str.replace("Message_Title",Message_Title)
+    dict_content_str = dict_content_str.replace("MESSAGE_TITLE",Message_Title)
     dict_content_str = dict_content_str.replace("MESSAGE",Message)
     dict_content_str = dict_content_str.replace("SLIENTTIME",SilentTime)
     dict_handler.update({"content":dict_content_str})
@@ -60,12 +60,12 @@ def handler_creater_dev_and_off(IdDescription,Message_Title,Message,SilentTime):
 "act":"push",\
 "id":"IdDescription",\
 "method":["email","fcm","line"],\
-"title":"Message_Title",\
+"title":"MESSAGE_TITLE",\
 "message":["MESSAGE"],\
 "target":{"role_name":["FC","Technician","Developer"]},\
 "silent_time": SLIENTTIME}'
     dict_content_str_dev = dict_content_str_dev.replace("IdDescription",IdDescription)
-    dict_content_str_dev = dict_content_str_dev.replace("Message_Title",Message_Title)
+    dict_content_str_dev = dict_content_str_dev.replace("MESSAGE_TITLE",Message_Title)
     dict_content_str_dev = dict_content_str_dev.replace("MESSAGE",Message)
     dict_content_str_dev = dict_content_str_dev.replace("SLIENTTIME",SilentTime)
     dict_handler_dev.update({"content":dict_content_str_dev})
@@ -80,12 +80,12 @@ def handler_creater_dev_and_off(IdDescription,Message_Title,Message,SilentTime):
 "act":"push",\
 "id":"IdDescription",\
 "method":["email","fcm","line"],\
-"title":"Message_Title",\
+"title":"MESSAGE_TITLE",\
 "message":["MESSAGE"],\
 "target":{"role_name":["FC","technician","developer"]},\
 "silent_time": SLIENTTIME}'
     dict_content_str_off = dict_content_str_off.replace("IdDescription",IdDescription)
-    dict_content_str_off = dict_content_str_off.replace("Message_Title",Message_Title)
+    dict_content_str_off = dict_content_str_off.replace("MESSAGE_TITLE",Message_Title)
     dict_content_str_off = dict_content_str_off.replace("MESSAGE",Message)
     dict_content_str_off = dict_content_str_off.replace("SLIENTTIME",SilentTime)
     dict_handler_off.update({"content":dict_content_str_off})
