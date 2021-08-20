@@ -289,6 +289,20 @@ message_target = "dev_off"
 save_name = "HHWP_TRIP_AL_informed_BA_inform.txt"
 save_name_ID = F"{save_name[0:-4]}_ID.txt"
 
+# LAB FCU
+DeviceType = "FCU"
+PointType = "ST"
+EventName = "實驗室FCU關閉"
+Level = "警報"
+x_rule = {"x":{"PointType":"ST","SetValue":"False"}}
+y_rule = {"y1":{"PointType":"hour","UpperBound":24,"LowerBound":-1},
+    }
+Message_Title = "實驗室FCU關閉"
+SilentTime = "0"
+Message = "DEVICEID-實驗室FCU關閉"
+message_target = "dev_off"
+save_name = "FCU_LAB_ST_Close_time_informed.txt"
+save_name_ID = F"{save_name[0:-4]}_ID.txt"
 
 
 Set_up_rules(DeviceType=DeviceType, PointType=PointType, EventName=EventName, Level=Level, x_rule=x_rule, y_rule=y_rule, Message_Title=Message_Title, Message=Message, SilentTime=SilentTime, message_target=message_target).save_text(save_name)
