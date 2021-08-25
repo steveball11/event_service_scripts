@@ -291,18 +291,33 @@ save_name_ID = F"{save_name[0:-4]}_ID.txt"
 
 # LAB FCU
 DeviceType = "FCU"
-PointType = "ST"
+PointType = "ST1"
 EventName = "實驗室FCU關閉"
 Level = "警報"
-x_rule = {"x":{"PointType":"ST","SetValue":"False"}}
+x_rule = {"x":{"PointType":"ST1","SetValue":"False"}}
 y_rule = {"y1":{"PointType":"hour","UpperBound":24,"LowerBound":-1},
     }
 Message_Title = "實驗室FCU關閉"
 SilentTime = "0"
 Message = "DEVICEID-實驗室FCU關閉"
 message_target = "dev_off"
-save_name = "FCU_LAB_ST_Close_time_informed.txt"
+save_name = "FCU_LAB_ST1_Close_time_informed.txt"
 save_name_ID = F"{save_name[0:-4]}_ID.txt"
+
+DeviceType = "CRAC"
+PointType = "RA_T"
+EventName = "電腦機房室內溫度過高"
+Level = "嚴重"
+x_rule = {"x":{"PointType":"RA_T","LowerBound":"28"}}
+y_rule = {"y1":{"PointType":"hour","UpperBound":24,"LowerBound":-1},
+    }
+Message_Title = "電腦機房室內溫度過高"
+SilentTime = "0"
+Message = "DEVICEID-電腦機房室內溫度過高"
+message_target = "dev_off"
+save_name = "CRAC_RA_T_time_informed.txt"
+save_name_ID = F"{save_name[0:-4]}_ID.txt"
+
 
 
 Set_up_rules(DeviceType=DeviceType, PointType=PointType, EventName=EventName, Level=Level, x_rule=x_rule, y_rule=y_rule, Message_Title=Message_Title, Message=Message, SilentTime=SilentTime, message_target=message_target).save_text(save_name)

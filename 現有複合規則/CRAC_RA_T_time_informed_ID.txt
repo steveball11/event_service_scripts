@@ -1,0 +1,8 @@
+[
+    "CRAC_1_10-RA_T-hour-informed-alarm",
+    "CRAC_2_10-RA_T-hour-informed-alarm",
+    "CRAC_3_11-RA_T-hour-informed-alarm",
+    "CRAC_4_11-RA_T-hour-informed-alarm",
+    "CRAC_5_11-RA_T-hour-informed-alarm",
+    "CRAC_6_11-RA_T-hour-informed-alarm"
+]

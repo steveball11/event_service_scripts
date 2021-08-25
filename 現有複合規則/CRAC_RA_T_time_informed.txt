@@ -1,0 +1,326 @@
+[
+    {
+        "_id": "CRAC_1_10-RA_T-hour-informed-alarm",
+        "name": "電腦機房室內溫度過高",
+        "level": "嚴重",
+        "description": "CRAC_1_10-RA_T-電腦機房室內溫度過高",
+        "labels": [
+            {
+                "device": "76997430-545d-4034-ab78-7995d47cdb53"
+            },
+            {
+                "floor": "TPKD-10"
+            },
+            {
+                "point": "CRAC_1_10-RA_T"
+            },
+            {
+                "deviceType": "CRAC"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/CRAC_1_10-RA_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>=-1 and Timestamp(x.time).hour<=24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"CRAC_1_10-RA_T-hour-informed-alarm\",\"method\":[{\"email\":null},{\"fcm\":null},{\"line\":null},{\"request\":{\"description\":\"CRAC_1_10-RA_T-電腦機房室內溫度過高\",\"reporter\":{\"name\":\"事件規則機器人\",\"email\":\"\",\"unit\":\"事件中心\",\"phone\":\"\"},\"io_point\":{\"id\":\"CRAC_1_10-RA_T\"},\"device\":{\"name\":\"CRAC_1_10\"},\"alert_id\": \"<Enforcer.ActiveAlert>\"}}],\"title\":\"電腦機房室內溫度過高\",\"message\":[\"CRAC_1_10-電腦機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0,\"alert_id\": \"<Enforcer.ActiveAlert>\",\"tenant\": \"google\"}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"CRAC_1_10-RA_T-hour-informed-alarm\",\"method\":[{\"email\":null},{\"fcm\":null},{\"line\":null},{\"request\":{\"description\":\"CRAC_1_10-RA_T-電腦機房室內溫度過高\",\"reporter\":{\"name\":\"事件規則機器人\",\"email\":\"\",\"unit\":\"事件中心\",\"phone\":\"\"},\"io_point\":{\"id\":\"CRAC_1_10-RA_T\"},\"device\":{\"name\":\"CRAC_1_10\"},\"alert_id\": \"<Enforcer.ActiveAlert>\"}}],\"title\":\"電腦機房室內溫度過高\",\"message\":[\"CRAC_1_10-電腦機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0,\"alert_id\": \"<Enforcer.ActiveAlert>\",\"tenant\": \"google\"}"
+            }
+        ]
+    },
+    {
+        "_id": "CRAC_2_10-RA_T-hour-informed-alarm",
+        "name": "電腦機房室內溫度過高",
+        "level": "嚴重",
+        "description": "CRAC_2_10-RA_T-電腦機房室內溫度過高",
+        "labels": [
+            {
+                "device": "fd2694c8-55c1-4d38-a497-917c8a624d8b"
+            },
+            {
+                "floor": "TPKD-10"
+            },
+            {
+                "point": "CRAC_2_10-RA_T"
+            },
+            {
+                "deviceType": "CRAC"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/CRAC_2_10-RA_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>=-1 and Timestamp(x.time).hour<=24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"CRAC_2_10-RA_T-hour-informed-alarm\",\"method\":[{\"email\":null},{\"fcm\":null},{\"line\":null},{\"request\":{\"description\":\"CRAC_2_10-RA_T-電腦機房室內溫度過高\",\"reporter\":{\"name\":\"事件規則機器人\",\"email\":\"\",\"unit\":\"事件中心\",\"phone\":\"\"},\"io_point\":{\"id\":\"CRAC_2_10-RA_T\"},\"device\":{\"name\":\"CRAC_2_10\"},\"alert_id\": \"<Enforcer.ActiveAlert>\"}}],\"title\":\"電腦機房室內溫度過高\",\"message\":[\"CRAC_2_10-電腦機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0,\"alert_id\": \"<Enforcer.ActiveAlert>\",\"tenant\": \"google\"}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"CRAC_2_10-RA_T-hour-informed-alarm\",\"method\":[{\"email\":null},{\"fcm\":null},{\"line\":null},{\"request\":{\"description\":\"CRAC_2_10-RA_T-電腦機房室內溫度過高\",\"reporter\":{\"name\":\"事件規則機器人\",\"email\":\"\",\"unit\":\"事件中心\",\"phone\":\"\"},\"io_point\":{\"id\":\"CRAC_2_10-RA_T\"},\"device\":{\"name\":\"CRAC_2_10\"},\"alert_id\": \"<Enforcer.ActiveAlert>\"}}],\"title\":\"電腦機房室內溫度過高\",\"message\":[\"CRAC_2_10-電腦機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0,\"alert_id\": \"<Enforcer.ActiveAlert>\",\"tenant\": \"google\"}"
+            }
+        ]
+    },
+    {
+        "_id": "CRAC_3_11-RA_T-hour-informed-alarm",
+        "name": "電腦機房室內溫度過高",
+        "level": "嚴重",
+        "description": "CRAC_3_11-RA_T-電腦機房室內溫度過高",
+        "labels": [
+            {
+                "device": "33a28d67-5c25-487f-8859-9cb8599b9fec"
+            },
+            {
+                "floor": "TPKD-11"
+            },
+            {
+                "point": "CRAC_3_11-RA_T"
+            },
+            {
+                "deviceType": "CRAC"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/CRAC_3_11-RA_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>=-1 and Timestamp(x.time).hour<=24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"CRAC_3_11-RA_T-hour-informed-alarm\",\"method\":[{\"email\":null},{\"fcm\":null},{\"line\":null},{\"request\":{\"description\":\"CRAC_3_11-RA_T-電腦機房室內溫度過高\",\"reporter\":{\"name\":\"事件規則機器人\",\"email\":\"\",\"unit\":\"事件中心\",\"phone\":\"\"},\"io_point\":{\"id\":\"CRAC_3_11-RA_T\"},\"device\":{\"name\":\"CRAC_3_11\"},\"alert_id\": \"<Enforcer.ActiveAlert>\"}}],\"title\":\"電腦機房室內溫度過高\",\"message\":[\"CRAC_3_11-電腦機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0,\"alert_id\": \"<Enforcer.ActiveAlert>\",\"tenant\": \"google\"}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"CRAC_3_11-RA_T-hour-informed-alarm\",\"method\":[{\"email\":null},{\"fcm\":null},{\"line\":null},{\"request\":{\"description\":\"CRAC_3_11-RA_T-電腦機房室內溫度過高\",\"reporter\":{\"name\":\"事件規則機器人\",\"email\":\"\",\"unit\":\"事件中心\",\"phone\":\"\"},\"io_point\":{\"id\":\"CRAC_3_11-RA_T\"},\"device\":{\"name\":\"CRAC_3_11\"},\"alert_id\": \"<Enforcer.ActiveAlert>\"}}],\"title\":\"電腦機房室內溫度過高\",\"message\":[\"CRAC_3_11-電腦機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0,\"alert_id\": \"<Enforcer.ActiveAlert>\",\"tenant\": \"google\"}"
+            }
+        ]
+    },
+    {
+        "_id": "CRAC_4_11-RA_T-hour-informed-alarm",
+        "name": "電腦機房室內溫度過高",
+        "level": "嚴重",
+        "description": "CRAC_4_11-RA_T-電腦機房室內溫度過高",
+        "labels": [
+            {
+                "device": "eff5f69b-fe4f-4cda-bede-c41d56d4faf8"
+            },
+            {
+                "floor": "TPKD-11"
+            },
+            {
+                "point": "CRAC_4_11-RA_T"
+            },
+            {
+                "deviceType": "CRAC"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/CRAC_4_11-RA_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>=-1 and Timestamp(x.time).hour<=24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"CRAC_4_11-RA_T-hour-informed-alarm\",\"method\":[{\"email\":null},{\"fcm\":null},{\"line\":null},{\"request\":{\"description\":\"CRAC_4_11-RA_T-電腦機房室內溫度過高\",\"reporter\":{\"name\":\"事件規則機器人\",\"email\":\"\",\"unit\":\"事件中心\",\"phone\":\"\"},\"io_point\":{\"id\":\"CRAC_4_11-RA_T\"},\"device\":{\"name\":\"CRAC_4_11\"},\"alert_id\": \"<Enforcer.ActiveAlert>\"}}],\"title\":\"電腦機房室內溫度過高\",\"message\":[\"CRAC_4_11-電腦機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0,\"alert_id\": \"<Enforcer.ActiveAlert>\",\"tenant\": \"google\"}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"CRAC_4_11-RA_T-hour-informed-alarm\",\"method\":[{\"email\":null},{\"fcm\":null},{\"line\":null},{\"request\":{\"description\":\"CRAC_4_11-RA_T-電腦機房室內溫度過高\",\"reporter\":{\"name\":\"事件規則機器人\",\"email\":\"\",\"unit\":\"事件中心\",\"phone\":\"\"},\"io_point\":{\"id\":\"CRAC_4_11-RA_T\"},\"device\":{\"name\":\"CRAC_4_11\"},\"alert_id\": \"<Enforcer.ActiveAlert>\"}}],\"title\":\"電腦機房室內溫度過高\",\"message\":[\"CRAC_4_11-電腦機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0,\"alert_id\": \"<Enforcer.ActiveAlert>\",\"tenant\": \"google\"}"
+            }
+        ]
+    },
+    {
+        "_id": "CRAC_5_11-RA_T-hour-informed-alarm",
+        "name": "電腦機房室內溫度過高",
+        "level": "嚴重",
+        "description": "CRAC_5_11-RA_T-電腦機房室內溫度過高",
+        "labels": [
+            {
+                "device": "8a04021b-5248-47e5-8fdf-0b976512791d"
+            },
+            {
+                "floor": "TPKD-11"
+            },
+            {
+                "point": "CRAC_5_11-RA_T"
+            },
+            {
+                "deviceType": "CRAC"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/CRAC_5_11-RA_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>=-1 and Timestamp(x.time).hour<=24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"CRAC_5_11-RA_T-hour-informed-alarm\",\"method\":[{\"email\":null},{\"fcm\":null},{\"line\":null},{\"request\":{\"description\":\"CRAC_5_11-RA_T-電腦機房室內溫度過高\",\"reporter\":{\"name\":\"事件規則機器人\",\"email\":\"\",\"unit\":\"事件中心\",\"phone\":\"\"},\"io_point\":{\"id\":\"CRAC_5_11-RA_T\"},\"device\":{\"name\":\"CRAC_5_11\"},\"alert_id\": \"<Enforcer.ActiveAlert>\"}}],\"title\":\"電腦機房室內溫度過高\",\"message\":[\"CRAC_5_11-電腦機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0,\"alert_id\": \"<Enforcer.ActiveAlert>\",\"tenant\": \"google\"}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"CRAC_5_11-RA_T-hour-informed-alarm\",\"method\":[{\"email\":null},{\"fcm\":null},{\"line\":null},{\"request\":{\"description\":\"CRAC_5_11-RA_T-電腦機房室內溫度過高\",\"reporter\":{\"name\":\"事件規則機器人\",\"email\":\"\",\"unit\":\"事件中心\",\"phone\":\"\"},\"io_point\":{\"id\":\"CRAC_5_11-RA_T\"},\"device\":{\"name\":\"CRAC_5_11\"},\"alert_id\": \"<Enforcer.ActiveAlert>\"}}],\"title\":\"電腦機房室內溫度過高\",\"message\":[\"CRAC_5_11-電腦機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0,\"alert_id\": \"<Enforcer.ActiveAlert>\",\"tenant\": \"google\"}"
+            }
+        ]
+    },
+    {
+        "_id": "CRAC_6_11-RA_T-hour-informed-alarm",
+        "name": "電腦機房室內溫度過高",
+        "level": "嚴重",
+        "description": "CRAC_6_11-RA_T-電腦機房室內溫度過高",
+        "labels": [
+            {
+                "device": "46f99659-7eda-4b5a-8d51-6dd8ebc80df0"
+            },
+            {
+                "floor": "TPKD-11"
+            },
+            {
+                "point": "CRAC_6_11-RA_T"
+            },
+            {
+                "deviceType": "CRAC"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/CRAC_6_11-RA_T/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>=-1 and Timestamp(x.time).hour<=24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"CRAC_6_11-RA_T-hour-informed-alarm\",\"method\":[{\"email\":null},{\"fcm\":null},{\"line\":null},{\"request\":{\"description\":\"CRAC_6_11-RA_T-電腦機房室內溫度過高\",\"reporter\":{\"name\":\"事件規則機器人\",\"email\":\"\",\"unit\":\"事件中心\",\"phone\":\"\"},\"io_point\":{\"id\":\"CRAC_6_11-RA_T\"},\"device\":{\"name\":\"CRAC_6_11\"},\"alert_id\": \"<Enforcer.ActiveAlert>\"}}],\"title\":\"電腦機房室內溫度過高\",\"message\":[\"CRAC_6_11-電腦機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0,\"alert_id\": \"<Enforcer.ActiveAlert>\",\"tenant\": \"google\"}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"CRAC_6_11-RA_T-hour-informed-alarm\",\"method\":[{\"email\":null},{\"fcm\":null},{\"line\":null},{\"request\":{\"description\":\"CRAC_6_11-RA_T-電腦機房室內溫度過高\",\"reporter\":{\"name\":\"事件規則機器人\",\"email\":\"\",\"unit\":\"事件中心\",\"phone\":\"\"},\"io_point\":{\"id\":\"CRAC_6_11-RA_T\"},\"device\":{\"name\":\"CRAC_6_11\"},\"alert_id\": \"<Enforcer.ActiveAlert>\"}}],\"title\":\"電腦機房室內溫度過高\",\"message\":[\"CRAC_6_11-電腦機房室內溫度過高\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0,\"alert_id\": \"<Enforcer.ActiveAlert>\",\"tenant\": \"google\"}"
+            }
+        ]
+    }
+]

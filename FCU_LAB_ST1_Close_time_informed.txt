@@ -1,0 +1,56 @@
+[
+    {
+        "_id": "FCU_92_3-ST1-hour-informed-alarm",
+        "name": "實驗室FCU關閉",
+        "level": "警報",
+        "description": "FCU_92_3-ST1-實驗室FCU關閉",
+        "labels": [
+            {
+                "device": "31de79b3-117c-40d0-89fc-a7fc77f34054"
+            },
+            {
+                "floor": "TPKD-3"
+            },
+            {
+                "point": "FCU_92_3-ST1"
+            },
+            {
+                "deviceType": "FCU"
+            }
+        ],
+        "trigger": {
+            "_t": "subscriber",
+            "topic": "points/FCU_92_3-ST1/presentvalue"
+        },
+        "calculator": {
+            "_t": "default",
+            "arguments": {
+                "x": {
+                    "_t": "topic"
+                }
+            },
+            "conditions": {
+                "activate": {
+                    "_t": "simple",
+                    "expression": "(x.value!=None and x.value==False) and (Timestamp(x.time).hour>=-1 and Timestamp(x.time).hour<=24)"
+                }
+            }
+        },
+        "handlers": [
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-dev-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"FCU_92_3-ST1-hour-informed-alarm\",\"method\":[{\"email\":null},{\"fcm\":null},{\"line\":null},{\"request\":{\"description\":\"FCU_92_3-ST1-實驗室FCU關閉\",\"reporter\":{\"name\":\"事件規則機器人\",\"email\":\"\",\"unit\":\"事件中心\",\"phone\":\"\"},\"io_point\":{\"id\":\"FCU_92_3-ST1\"},\"device\":{\"name\":\"FCU_92_3\"},\"alert_id\": \"<Enforcer.ActiveAlert>\"}}],\"title\":\"實驗室FCU關閉\",\"message\":[\"FCU_92_3-實驗室FCU關閉\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0,\"alert_id\": \"<Enforcer.ActiveAlert>\",\"tenant\": \"google\"}"
+            },
+            {
+                "_t": "api",
+                "method": "POST",
+                "uri": "https://bms-api.aubix.com",
+                "mediaType": "application/json",
+                "content": "{\"type\":\"notification\",\"act\":\"push\",\"id\":\"FCU_92_3-ST1-hour-informed-alarm\",\"method\":[{\"email\":null},{\"fcm\":null},{\"line\":null},{\"request\":{\"description\":\"FCU_92_3-ST1-實驗室FCU關閉\",\"reporter\":{\"name\":\"事件規則機器人\",\"email\":\"\",\"unit\":\"事件中心\",\"phone\":\"\"},\"io_point\":{\"id\":\"FCU_92_3-ST1\"},\"device\":{\"name\":\"FCU_92_3\"},\"alert_id\": \"<Enforcer.ActiveAlert>\"}}],\"title\":\"實驗室FCU關閉\",\"message\":[\"FCU_92_3-實驗室FCU關閉\"],\"target\":{\"role_name\":[\"FC\",\"Technician\",\"Developer\"]},\"silent_time\": 0,\"alert_id\": \"<Enforcer.ActiveAlert>\",\"tenant\": \"google\"}"
+            }
+        ]
+    },
+]
