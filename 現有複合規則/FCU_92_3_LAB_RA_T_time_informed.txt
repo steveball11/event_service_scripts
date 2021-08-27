@@ -32,7 +32,7 @@
             "conditions": {
                 "activate": {
                     "_t": "simple",
-                    "expression": "(x.value!=None and x.value>25) and (Timestamp(x.time).hour>=-1 and Timestamp(x.time).hour<=24)"
+                    "expression": "(x.value!=None and x.value>28) and (Timestamp(x.time).hour>=-1 and Timestamp(x.time).hour<=24)"
                 }
             }
         },

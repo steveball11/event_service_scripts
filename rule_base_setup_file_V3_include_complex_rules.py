@@ -2,7 +2,7 @@
 import pandas as pd
 import json
 import re
-import complex_rules_packages
+import complex_rules_package_hour
 #%%
 # points inside certain facility
 class Set_up_rules:
@@ -61,7 +61,7 @@ class Set_up_rules:
 
     def create_post_str_Series(self):
         for i in range(len(self.df_setup)):
-            self.df_setup.loc[i,"rule_base_set"] = complex_rules_packages.main(EventName=self.df_setup.loc[i,"EventName"],
+            self.df_setup.loc[i,"rule_base_set"] = complex_rules_package_hour.main(EventName=self.df_setup.loc[i,"EventName"],
             Level=self.df_setup.loc[i,"Level"],
             PointId=self.df_setup.loc[i,"PointId"],
             Description=self.df_setup.loc[i,"Description"],
@@ -86,7 +86,7 @@ class Set_up_rules:
         return combine_txt
 
     def save_text(self,save_txt):
-        text_file = open(save_txt, "w")
+        text_file = open(save_txt, "w",encoding='UTF-8')
         text_file.write(self.combine_txt)
         text_file.close()
         return print("Save post string success")
@@ -95,7 +95,7 @@ class Set_up_rules:
         li = []
         for rule in self.Series_post_str:
             li.append(eval(rule)[0]["_id"])
-        text_file = open(id_save_txts, "w")
+        text_file = open(id_save_txts, "w",encoding='UTF-8')
         text_file.write(json.dumps(li))
         text_file.close()
         print("Save post string id success")
@@ -119,7 +119,28 @@ Level = "警報"
 x_rule = {"x":{"PointType":"ST1","SetValue":"False"}}
 y_rule = {"y3":{"PointType":"time","UpperBound":21,"LowerBound":7.5}
     }
+# 上班時間出風溫度過高
+DeviceType = "AHU"
+PointType = "SA_T"
+EventName = "AHU開機時出風溫度過高"
+Level = "警報"
+x_rule = {"x":{"PointType":"SA_T","LowerBound":28}}
+y_rule = {"y1":{"PointType":"FAN_RUN_CMD","SetValue":"True"}
+    }
+save_name = "AHU-SA_T-FAN_RUN_CMD_informed.txt"
+save_name_ID = F"{save_name[0:-4]}_ID.txt"
 
+
+# 上班時間FCU回風溫度過高
+DeviceType = "FCU"
+PointType = "RA_T"
+EventName = "上班時間回風溫度過高"
+Level = "警報"
+x_rule = {"x":{"PointType":"RA_T","LowerBound":28}}
+y_rule = {"y1":{"PointType":"hour","UpperBound":21,"LowerBound":9}
+    }
+save_name = "FCU-RA_T-time.txt"
+save_name_ID = F"{save_name[0:-4]}_ID.txt"
 
 # DeviceType = "FCU"
 # PointType = "COM_AL"
@@ -145,8 +166,8 @@ y_rule = {"y3":{"PointType":"time","UpperBound":21,"LowerBound":7.5}
 # Set_up_rules(DeviceType=DeviceType,PointType=PointType,EventName=EventName,Level=Level,x_rule=x_rule,y_rule=y_rule).create_text()
 
 
-Set_up_rules(DeviceType=DeviceType,PointType=PointType,EventName=EventName,Level=Level,x_rule=x_rule,y_rule=y_rule).save_text("AHU_time_test.txt")
-Set_up_rules(DeviceType=DeviceType,PointType=PointType,EventName=EventName,Level=Level,x_rule=x_rule,y_rule=y_rule).every_id_list("AHU_id_time_test.txt")
+Set_up_rules(DeviceType=DeviceType,PointType=PointType,EventName=EventName,Level=Level,x_rule=x_rule,y_rule=y_rule).save_text(save_name)
+Set_up_rules(DeviceType=DeviceType,PointType=PointType,EventName=EventName,Level=Level,x_rule=x_rule,y_rule=y_rule).every_id_list(save_name_ID)
 
 
 # %%

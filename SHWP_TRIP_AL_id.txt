@@ -1,1 +1,0 @@
-["SHWP_1_2B-TRIP_AL_alarm", "SHWP_2_1B-TRIP_AL_alarm", "SHWP_3_1B-TRIP_AL_alarm", "SHWP_4_1B-TRIP_AL_alarm", "SHWP_5_1B-TRIP_AL_alarm", "SHWP_6_1B-TRIP_AL_alarm", "SHWP_7_1B-TRIP_AL_alarm", "SHWP_8_1B-TRIP_AL_alarm"]

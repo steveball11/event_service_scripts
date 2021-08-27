@@ -1,1 +1,0 @@
-["SHWP_1_2B-DPS_AL_alarm", "SHWP_2_1B-DPS_AL_alarm", "SHWP_3_1B-DPS_AL_alarm", "SHWP_4_1B-DPS_AL_alarm", "SHWP_5_1B-DPS_AL_alarm", "SHWP_6_1B-DPS_AL_alarm", "SHWP_7_1B-DPS_AL_alarm", "SHWP_8_1B-DPS_AL_alarm"]
